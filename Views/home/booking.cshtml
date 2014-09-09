@@ -1,0 +1,283 @@
+﻿@model EC08_SHBS.Models.PhieuGiaoDich
+@{
+    ViewBag.Title = "Đặt Phòng";
+    Layout = "~/Views/Shared/LayoutTrangChu/_MasterpageGuest.cshtml";
+}
+@using EC08_SHBS;
+@using System.Xml.Linq;
+@using EC08_SHBS.Models;
+<script>
+    function updateTT() {
+        var soluongphong = document.getElementById("sophong").value;
+        var from = $("#datepicker").val().split('/');
+        f = new Date(from[2], from[1] - 1, from[0]);
+        var to = $("#datepicker2").val().split('/');
+        t = new Date(to[2], to[1] - 1, to[0]);
+
+
+        document.getElementById("ditu").value = $("#datepicker").val() + " - " + $("#datepicker2").val();
+        var sl = (t.getTime() - f.getTime()) / (1000 * 60 * 60 * 24);
+
+        var giaphong = document.getElementById("giaphong").value;
+        var tong;
+        var dem = 0;
+        if (sl == 0) {
+            tong = soluongphong * giaphong
+        }
+        else {
+            tong = sl * soluongphong * giaphong;
+            dem = sl;
+        }
+
+        document.getElementById("giatri").value = tong;
+        document.getElementById("sodem").value = dem;
+        document.getElementById("sophong2").value = soluongphong;
+        document.getElementById("sophongDat").value = soluongphong;
+    }
+</script>
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="@Url.Content("~/Content/guest/js/datepicker.js")"></script>
+<div class="main_content">
+    <div class="clear"></div>
+    <div class="right_master">
+        <div class="main_content">
+            @{
+                PortalEntities db = new PortalEntities();
+                string idKS = Request["idKhachSan"].ToString();
+                string idLP = Request["idLoaiPhong"].ToString();
+                var ks = db.KhachSans.Where(a => a.idKS.Equals(idKS));
+
+                foreach (var item in ks)
+                {
+                    WebService wsKS = new WebService(item.URL, "getThongTinKhachSan");
+                    wsKS.Invoke();
+                    string duLieuKS = wsKS.ResultString;
+                    XDocument xmlKS = new XDocument();
+                    XDocument xmlLP = new XDocument();
+                    if (duLieuKS != null)
+                    {
+                        string duLieuKSReplace = duLieuKS.Replace("xmlns=\"http://tempuri.org/\"", "");
+                        xmlKS = XDocument.Parse(duLieuKSReplace);
+                    }
+                    WebService wsP = new WebService(item.URL, "getChiTietPhong");
+                    wsP.Params.Add("index", idLP);
+                    wsP.Invoke();
+                    string temp = wsP.ResultString;
+                    if (temp != null)
+                    {
+                        string tempKSReplace = temp.Replace("xmlns=\"http://tempuri.org/\"", "");
+                        xmlLP = XDocument.Parse(tempKSReplace);
+                    }
+
+
+
+
+                    using (Html.BeginForm("datphong", "home", FormMethod.Post, new { @class = "form_booking", @onsubmit = "return kiemTraBooking();" }))
+                    {
+                <div class="alert1">Quý vị vui lòng nhập thông tin đặt phòng</div>
+                    
+                <div class="booking_roomItem">
+                    <label>
+                        @xmlLP.Descendants("tenLoai").Select(x => x.Value).ToArray()[0]
+                        <br />
+                        <span>@xmlLP.Descendants("tenLoai").Select(x => x.Value).ToArray()[0]</span>
+                    </label>
+
+                    <div class="booking_roomItem_content" id="div_select_room_1">
+                        <div class="booking_roomItem_content1">
+                            <span>Số phòng</span>
+
+                            <select style="width: 45px" id="sophong" onchange="updateTT()" name="soPhong">
+
+
+
+                                @{
+                        var pt = xmlLP.Descendants("PhongTrong").Select(x => x.Value).ToArray()[0];
+
+                        for (int i = 1; i <= int.Parse(pt); i++)
+                        {
+                                    <option value="@i">@i</option>
+                        }
+                                }
+
+                            </select>
+                        </div>
+
+                        <div class="booking_roomItem_content2">
+                            <span>Ngày nhận phòng
+                                @*<input type="text" id="datepicker" onchange="updateTT()">*@
+                                @Html.TextBoxFor(z => z.ngayNhanPhong, new
+                           {
+                               id = "datepicker",
+                               name = "datepicker",
+                               onchange = "updateTT()"
+                           })
+
+                            </span>
+                        </div>
+
+                        <div class="booking_roomItem_content3">
+                            <span>Ngày trả phòng
+                                @*<input type="text" id="datepicker2" onchange="updateTT()">*@
+                                @Html.TextBoxFor(z => z.ngayTraPhong, new
+                           {
+                               id = "datepicker2",
+                               name = "datepicker2",
+                               onchange = "updateTT()"
+                           })
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="clear"></div>
+                
+                @Html.Hidden("idKhachSan", idKS)
+                @Html.Hidden("idLoaiPhong", idLP)
+                @Html.Hidden("URL", item.URL) 
+                
+                
+                <div class="bookingDetail_table">
+                    <div class="bookingDetail_table_title">
+                        <div class="bookingDetail_table_title_left">
+                            Thông tin liên hệ
+                        </div>
+                        <div class="bookingDetail_table_title_right">
+                            Chi tiết đặt phòng của Quý vị
+                        </div>
+                    </div>
+                    
+                    <div class="bookingDetail_table_content">
+                   
+                            <div class="bookingDetail_table_content_left">
+                            <div class="bookingDetail_contactInfo">
+                                <div class="row1">
+                                    <span>Họ và tên:</span>
+                                    @Html.TextBoxFor(z => z.NguoiDung.hoTen, new
+                               {
+                                   type = "text",
+                                   name = "fullname",
+                                   id = "fullname"
+                               })
+                                    @*<input type="text" name="fullname" id="fullname">*@
+                                    *
+                                </div>
+                                <div class="row2">
+                                    <span>Số điện thoại:</span>
+                                    @Html.TextBoxFor(z => z.NguoiDung.dienThoai, new
+                               {
+                                   type = "text",
+                                   name = "phone",
+                                   id = "phone"
+                               })
+                                    @*<input name="phone" id="phone" type="text">*@
+                                    *
+                                </div>
+                                <div class="row1">
+                                    <span>Địa chỉ email:</span>
+                                    @Html.TextBoxFor(z => z.NguoiDung.eMail, new
+                               {
+                                   type = "text",
+                                   name = "email",
+                                   id = "email"
+                               })
+                                    @*<input name="email" id="email" type="text">*@
+                                    *
+                                </div>
+                                <div class="row1">
+                                    <span>Địa chỉ:</span>
+                                    @Html.TextBoxFor(z => z.NguoiDung.diaChi, new
+                               {
+                                   type = "text",
+                                   name = "diaChi",
+                                   id = "diaChi"
+                               })
+                                    @*<input name="email" id="email" type="text">*@
+                                    *
+                                </div>
+                                <div class="row1">
+                                    <span>Yêu cầu đặc biệt khác (nếu có):</span>
+                                    @Html.TextAreaFor(z => z.ghiChu, new
+                               {
+                                   type = "text",
+                                   name = "ghiChu",
+                                   id = "ghiChu"
+                               })
+                                </div>
+
+                            </div>
+                        </div>
+                   
+                        <div class="bookingDetail_table_content_right">
+                            <div class="bookingDetail_content">
+                                <label>
+                                    Khách sạn @xmlKS.Descendants("TenKhachSan").Select(x => x.Value).ToArray()[0]</label>
+                                <ul class="rooms">
+                                    @Html.Hidden("bKhachSan", @xmlKS.Descendants("TenKhachSan").Select(x => x.Value).ToArray()[0])
+                                    @Html.Hidden("bLoaiPhong", @xmlLP.Descendants("tenLoai").Select(x => x.Value).ToArray()[0])
+                                    <li><span>Loại phòng: @xmlLP.Descendants("tenLoai").Select(x => x.Value).ToArray()[0]</span>
+                                        <ul>
+                                            <li><span>Số phòng:</span> <b>
+                                                <input id = "sophongDat" type = "text" value = "1" style = "border: 0; width: 45px; color: #666666; font-weight: bold; text-align: right" readonly = "", />
+                                            </b>
+                                                <div class="clear">
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <span>Giá phòng:</span> <b>
+                                                    <input type="text" id="giaphong" value="@xmlLP.Descendants("giaPhong").Select(x => x.Value).ToArray()[0]" readonly="" style="border: 0; width: 45px; color: #037703; font-weight: bold; text-align: right">
+                                                    USD</b>
+                                                <div class="clear">
+                                                </div>
+                                            </li>
+                                            <li><span>Từ:</span> <b>
+                                                <input type="text" id="ditu" value="12-01-2014 đến 13-01-2014" readonly="" style="border: 0; width: 200px; color: #666666; font-weight: bold; text-align: right">
+                                            </b>
+                                                <div class="clear">
+                                                </div>
+                                            </li>
+                                            <li><span>Số đêm:</span> <b>
+                                                <input type="text" id="sodem" value="0" readonly="" style="border: 0; width: 45px; color: #666666; font-weight: bold; text-align: right"></b>
+                                                <div class="clear">
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <div class="clear">
+                                    </div>
+                                </ul>
+                                <ul class="price">
+                                    <li><span>Tổng tiền sau thuế của 
+                                            <input type="text" id="sophong2" value="0" readonly="" style="border: 0; color: #037703; font-weight: bold; width: 20px; text-align: center">phòng:
+                                    </span>
+                                        <b class="total_price">
+                                            <input id="giatri" type="text" name="giatri" style = "border: 0; color: #037703; font-weight: bold; text-align: right" value="@xmlLP.Descendants("giaPhong").Select(x => x.Value).ToArray()[0]" readonly = ""  />
+                                            @*<input id="giatri"type="text" value="@xmlLP.Descendants("giaPhong").Select(x => x.Value).ToArray()[0]" name="giatri"  >*@
+                                            USD
+                                        </b>
+                                        <div class="clear">
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clear">
+                        </div>
+                    </div>
+                </div>
+                <div class="but_tiepTucThanhToan_container">
+                    <input type="button" name="back" class="but_QuayLai" onclick="history.go(-1)">
+                    &nbsp;
+                <input type="submit" class="but_tiepTucThanhToan" value="">
+                </div>
+                    }
+                }
+
+                }
+        </div>
+    </div>
+</div>
+<script src="@Url.Content("~/Content/guest/js/kiemTraBooking.js")"></script>
