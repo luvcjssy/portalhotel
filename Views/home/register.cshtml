@@ -1,0 +1,172 @@
+﻿@model EC08_SHBS.Models.NguoiDungInfo
+@{
+    ViewBag.Title = "Đăng ký tài khoản";
+    Layout = "~/Views/Shared/LayoutTrangChu/_MasterpageGuest.cshtml";
+}
+<div class="main_content">
+    <div class="clear"></div>
+    <div class="right_master">
+        <div class="main_content">
+            <div class="signInInfo rounded">
+                <p style="text-align: justify;">Chào mừng Quý vị đến với hệ thống của chúng tôi, trang đặt phòng khách sạn Việt Nam phố biến nhất và là thành viên của tập đoàn <strong><a href="http://www.panatlantic.com.vn">Pan Atlantic, Inc.</a> </strong>có trụ sở tại Lầu 9, tòa nhà Coalimex, số 29-31 Đinh Bộ Lĩnh, Phường 24, Quận Bình Thạnh, TP. Hồ Chí Minh.</p>
+                <p style="text-align: justify;">Khách du lịch Việt Nam đi du lịch Việt Nam thông qua các công ty lữ hành sẽ nhanh chóng không còn thông dụng, thay vào đó là những chiếc xe hơi cá nhân vi vu cùng với gia đình để thoát khỏi sự gò bó trong các chương trình tua có sẵn. Điều này mở ra một thị trường khách lẻ Việt Nam vô cùng lớn cho Quý vị tiếp cận và khai thác.</p>
+                <p style="text-align: justify;">Chúng tôi chào đón Quý vị là thành viên của hệ thống, giúp Quý vị khai thác hàng triệu khách lẻ Việt Nam, bên cạnh đó chúng tôi còn là kênh quảng bá khách sạn của Quý vị có sức lan tỏa nhanh chóng, rộng khắp và hiệu quả bởi hàng nghìn khách hàng truy cập mỗi ngày.</p>
+            </div>
+            <br />
+            <div class="signIn_logIn">
+                <div class="signIn rounded" style="padding-bottom: 0px">
+                    <div class="signin_register">
+                        @using (Html.BeginForm("register", "home", FormMethod.Post, new { @class = "form_dangKy" }))
+                        {
+                            <h2 style="color: red">
+                                @Html.ValidationSummary(true)
+                            </h2>
+                            <label>Đăng ký</label>
+                            <fieldset>
+                                <legend>Thông tin đăng nhập </legend>
+                                <table class="signin_register">
+                                    <tbody>
+                                        <tr>
+                                            <td class="key" align="right">Username:
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(x => x.userName, new { @style = "border: 1px solid #68A4DF" })<sup style="color: red">*</sup>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="key" align="right">Password:
+                                            </td>
+                                            <td>
+                                                @Html.PasswordFor(x => x.passWord, new { @style = "border: 1px solid #68A4DF" })<sup style="color: red">*</sup>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Thông tin cá nhân </legend>
+                                <table class="signin_register">
+                                    <tbody>
+                                        <tr>
+                                            <td class="key" align="right">Họ tên:
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(x => x.hoTen, new { @style = "border: 1px solid #68A4DF" })<sup style="color: red">*</sup>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="key" align="right">Địa chỉ:
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(x => x.diaChi, new { @style = "border: 1px solid #68A4DF" })<sup style="color: red">*</sup>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="key" align="right">Điện thoại:
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(x => x.dienThoai, new { @style = "border: 1px solid #68A4DF" })<sup style="color: red">*</sup>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="key" align="right">Email:
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(x => x.eMail, new { @style = "border: 1px solid #68A4DF" })<sup style="color: red">*</sup>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" align="center" class="tdVal">
+                                                <span style="color: red; width: 100%; margin: 5px; text-align: left; font-weight: normal;">Xin hãy điền tất cả các ô bắc buộc có đánh dấu *</span>
+                                                @Html.ValidationMessageFor(x => x.userName)
+                                                @Html.ValidationMessageFor(x => x.passWord)
+                                                @Html.ValidationMessageFor(x => x.hoTen)
+                                                @Html.ValidationMessageFor(x => x.diaChi)
+                                                @Html.ValidationMessageFor(x => x.dienThoai)
+                                                @Html.ValidationMessageFor(x => x.eMail)
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </fieldset>
+                            <div class="signInBut" style="padding-bottom: 12px">
+                                <input type="submit" class="lForm_but2" value="Đăng ký">
+                            </div>
+                            <br>
+                            <br>
+                        }
+                    </div>
+                </div>
+                <div class="logIn rounded">
+                    <label>Lợi ích khi tham gia</label>
+                    <div class="signIn_info">
+                        <p></p>
+                        <h2 class="signIn_info_h2" style="color: red">Hiệu quả vượt trội:</h2>
+                        <p></p>
+                        <p class="signIn_info_answer">
+                            <img src="@Url.Content("~/Content/guest/images/register_top.png")" width="12px">
+                            <span>Tăng doanh số vì chúng tôi đang phục vụ nhu cầu của hàng triệu khách hàng
+                            </span>
+                        </p>
+                        <p class="signIn_info_answer">
+                            <img src="@Url.Content("~/Content/guest/images/register_top.png")" width="12px">
+                            <span>Tiết kiệm chi phí tiếp thị hiệu quả bởi hàng nghìn truy cập mỗi ngày
+                            </span>
+                        </p>
+                        <p class="signIn_info_answer">
+                            <img src="@Url.Content("~/Content/guest/images/register_top.png")" width="12px">
+                            <span>Dễ dàng quản lý các đặt phòng
+                            </span>
+                        </p>
+                        <p class="signIn_info_answer">
+                            <img src="@Url.Content("~/Content/guest/images/register_top.png")" width="12px">
+                            <span>Dễ dàng quản lý các góp ý, chia sẻ của Quý khách
+                            </span>
+                        </p>
+                        <p class="signIn_info_answer">
+                            <img src="@Url.Content("~/Content/guest/images/register_top.png")" width="12px">
+                            <span>Sự hỗ trợ toàn diện bởi bộ phận chăm sóc khách hàng phục vụ 24/7
+                            </span>
+                        </p>
+                    </div>
+                    <div class="signIn_info">
+                        <p></p>
+                        <h2 class="signIn_info_h2" style="color: red">Quý vị có toàn quyền:
+                        </h2>
+                        <p></p>
+                        <p class="signIn_info_answer">
+                            <img src="@Url.Content("~/Content/guest/images/register_bottom.jpg")" width="10px">
+                            <span>Cập nhật giá phòng và chính sách giá nhằm tối ưu lợi nhuận
+                            </span>
+                        </p>
+                        <p class="signIn_info_answer">
+                            <img src="@Url.Content("~/Content/guest/images/register_bottom.jpg")" width="10px">
+                            <span>Câp nhật các chương trình khuyến mại nhằm tối đa doanh số bán
+                            </span>
+                        </p>
+                        <p class="signIn_info_answer">
+                            <img src="@Url.Content("~/Content/guest/images/register_bottom.jpg")" width="10px">
+                            <span>Cập nhật tình trạng phòng (phòng trống, phòng đã được đặt)
+                            </span>
+                        </p>
+                        <p class="signIn_info_answer">
+                            <img src="@Url.Content("~/Content/guest/images/register_bottom.jpg")" width="10px">
+                            <span>Cập nhật thông tin, hình ảnh khách sạn nhằm tối đa sức cuốn hút
+                            </span>
+                        </p>
+                        <p class="signIn_info_answer">
+                            <img src="@Url.Content("~/Content/guest/images/register_bottom.jpg")" width="10px">
+                            <span>Cập nhật chính sách hủy đặt phòng, chính sách khách sạn…
+                            </span>
+                        </p>
+                        <p class="signIn_info_answer">
+                            <img src="@Url.Content("~/Content/guest/images/icon_question.jpg")" width="12px">
+                            <span>Nếu Quý vị cần thêm bất kỳ sự trợ giúp nào, vui lòng liên hệ với chúng tôi qua tổng đài <b>08.5445 3555</b> để được hỗ trợ
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
