@@ -1,0 +1,135 @@
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\EC08_SHBS.dll
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\EC08_SHBS.pdb
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\Antlr3.Runtime.dll
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\EntityFramework.dll
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\Newtonsoft.Json.dll
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\System.Net.Http.dll
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\System.Net.Http.Formatting.dll
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\System.Net.Http.WebRequest.dll
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Http.dll
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Http.WebHost.dll
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Mvc.dll
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Optimization.dll
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Providers.dll
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Razor.dll
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.WebPages.dll
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.WebPages.Razor.dll
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\WebGrease.dll
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\EntityFramework.xml
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\Newtonsoft.Json.xml
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\System.Net.Http.xml
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\System.Net.Http.Formatting.xml
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\System.Net.Http.WebRequest.xml
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Http.xml
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Http.WebHost.xml
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Mvc.xml
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Razor.xml
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.WebPages.xml
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.WebPages.Razor.xml
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\obj\Debug\EC08_SHBS.dll
+C:\Users\Administrator\Documents\hotelbooking\Project\EC08_SHBS\EC08_SHBS\obj\Debug\EC08_SHBS.pdb
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\obj\Debug\EC08_SHBS.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\obj\Debug\EC08_SHBS.dll
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\obj\Debug\EC08_SHBS.pdb
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\EC08_SHBS.dll
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\EC08_SHBS.pdb
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\Antlr3.Runtime.dll
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\EntityFramework.dll
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\Newtonsoft.Json.dll
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\System.Net.Http.dll
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\System.Net.Http.Formatting.dll
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\System.Net.Http.WebRequest.dll
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Http.dll
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Http.WebHost.dll
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Mvc.dll
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Optimization.dll
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Providers.dll
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Razor.dll
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.WebPages.dll
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.WebPages.Razor.dll
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\WebGrease.dll
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\EntityFramework.xml
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\Newtonsoft.Json.xml
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\System.Net.Http.xml
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\System.Net.Http.Formatting.xml
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\System.Net.Http.WebRequest.xml
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Http.xml
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Http.WebHost.xml
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Mvc.xml
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Razor.xml
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.WebPages.xml
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Administrator\Desktop\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.WebPages.Razor.xml
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\EC08_SHBS.dll
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\EC08_SHBS.pdb
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\Antlr3.Runtime.dll
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\EntityFramework.dll
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\Microsoft.Web.Infrastructure.dll
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\Newtonsoft.Json.dll
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Net.Http.dll
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Net.Http.Formatting.dll
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Net.Http.WebRequest.dll
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Http.dll
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Http.WebHost.dll
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Mvc.dll
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Optimization.dll
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Providers.dll
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Razor.dll
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.WebPages.Deployment.dll
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.WebPages.dll
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.WebPages.Razor.dll
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\WebGrease.dll
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\EntityFramework.xml
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\Newtonsoft.Json.xml
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Net.Http.xml
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Net.Http.Formatting.xml
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Net.Http.WebRequest.xml
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Http.xml
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Http.WebHost.xml
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Mvc.xml
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Razor.xml
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.WebPages.xml
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.WebPages.Deployment.xml
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.WebPages.Razor.xml
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\obj\Debug\EC08_SHBS.csprojResolveAssemblyReference.cache
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\obj\Debug\EC08_SHBS.dll
+E:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\obj\Debug\EC08_SHBS.pdb
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\EC08_SHBS.dll
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\EC08_SHBS.pdb
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\Antlr3.Runtime.dll
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\EntityFramework.dll
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\Microsoft.Web.Infrastructure.dll
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\Newtonsoft.Json.dll
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Net.Http.dll
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Net.Http.Formatting.dll
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Net.Http.WebRequest.dll
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Http.dll
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Http.WebHost.dll
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Mvc.dll
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Optimization.dll
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Providers.dll
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Razor.dll
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.WebPages.Deployment.dll
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.WebPages.dll
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.WebPages.Razor.dll
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\WebGrease.dll
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\EntityFramework.xml
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\Newtonsoft.Json.xml
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Net.Http.xml
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Net.Http.Formatting.xml
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Net.Http.WebRequest.xml
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Http.xml
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Http.WebHost.xml
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Mvc.xml
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.Razor.xml
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.WebPages.xml
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.WebPages.Deployment.xml
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\bin\System.Web.WebPages.Razor.xml
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\obj\Debug\EC08_SHBS.csprojResolveAssemblyReference.cache
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\obj\Debug\EC08_SHBS.dll
+D:\Tai lieu\HCDH\HK2\TMDT\Project\EC08_SHBS\EC08_SHBS\obj\Debug\EC08_SHBS.pdb

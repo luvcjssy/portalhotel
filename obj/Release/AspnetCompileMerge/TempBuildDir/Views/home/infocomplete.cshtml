@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Cập nhật thông tin thành công";
+    Layout = "~/Views/Shared/LayoutTrangChu/_MasterpageGuest.cshtml";
+}
+<form id="infocomplete">
+    <div class="main_content">
+        <div class="clear"></div>
+        <div class="right_master">
+            <div class="alert" style="text-align: center; color: red">
+                Cập nhật thông tin cá nhân thành công<br />
+                <span style="font-size: 14px; color: black">Nhấn @Html.ActionLink("vào đây", "index", "home") để quay lại trang chủ.</span>
+            </div>
+
+        </div>
+    </div>
+</form>
+@*<script type="text/javascript" language="javascript">
+    $(this.document).ready(function () {
+        var form = $("#infocomplete");
+        form.submit();
+    });
+</script>*@
+

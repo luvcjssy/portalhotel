@@ -1,0 +1,116 @@
+﻿@model IEnumerable<EC08_SHBS.Models.sp_DanhSachGiaoDich_Result> 
+@{
+    ViewBag.Title = "DSGiaoDich";
+    Layout = "~/Views/Shared/LayoutAdmin/_MasterpageAdmin.cshtml";
+}
+
+<h2>DANH SÁCH GIAO DỊCH </h2>
+<div class="clear">
+</div>
+<div class="clear"></div>
+<!-- End .clear -->
+<div class="content-box">
+    <!-- Start Content Box -->
+    <div class="content-box-header">
+        <h3 style="cursor: s-resize;">
+            Danh sách giao dịch</h3>
+        <div class="clear">
+        </div>
+    </div>
+    <!-- End .content-box-header -->
+    <div class="content-box-content">
+        <div class="tab-content default-tab" id="tab1" style="display: block;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            Mã Phiếu Giao Dịch
+                        </th>
+                        <th>
+                            Mã Người Dùng
+                        </th>
+                        <th>
+                            Mã Khách Sạn
+                        </th>
+                        <th>
+                            Tổng Tiền
+                        </th>
+                        <th>
+                            Ngày Lập Phiếu
+                        </th>
+                        <th>
+                            Ngày Nhận Phòng
+                        </th>
+                        <th>
+                            Ngày Trả Phòng
+                        </th>
+                        <th>
+                            Số Lượng Phòng
+                        </th>
+                        <th>
+                            Hình Thức Thanh Toán
+                        </th>
+                    </tr>
+                </thead>
+                <!--page footer-->
+                
+                @{int i = 0;}
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="@(i++ % 2 == 0 ? "alt-row" : "")">
+                            <td>
+                                @item.idPhieuGiaoDich
+                            </td>
+                            <td>
+                                @item.idNguoiDP
+                            </td>
+                            <td>
+                                @item.idKS
+                            </td>
+                            <td>
+                                @item.tongTien
+                            </td>
+                            <td>
+                              
+                                @item.ngayLapPhieu
+                            </td>
+                            <td>
+                                @item.ngayNhanPhong
+                            </td>
+                            <td>
+                                @item.ngayTraPhong
+                            </td>
+                            <td>
+                                @item.soLuongPhong
+                            </td>
+                            <td>
+                                @item.hinhThucThanhToan
+                            </td>
+
+                         @*   <td>
+                                @item.Gia
+                            </td>
+                            <td>
+                                <!-- Icons -->
+                                <a href="@Url.Content("~/cachieu/edit/")@item.MaCaChieu" title="Edit">
+                                    <img src="@Url.Content("~/Content/admin/images/icons/hammer_screwdriver.png")" alt="Edit"></a>
+                                <a href="@Url.Content("~/cachieu/delete/")@item.MaCaChieu" title="Delete">
+                                    <img src="@Url.Content("~/Content/admin/images/icons/cross.png")" alt="Delete"></a>
+                            </td>*@
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- End .content-box-content -->
+</div>
+@*<div id="footer">
+    <small>
+        <!-- Remove this notice or replace it with whatever you want -->
+        © Copyright 2009 Your Company | Powered by <a href="http://themeforest.net/item/simpla-admin-flexible-user-friendly-admin-skin/46073">
+            Simpla Admin</a> | <a href="#">Top</a> </small>
+</div>
+<!-- End #footer -->*@
+

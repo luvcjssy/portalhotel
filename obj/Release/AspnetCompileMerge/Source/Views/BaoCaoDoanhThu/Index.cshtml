@@ -1,0 +1,100 @@
+﻿@model IEnumerable<EC08_SHBS.Models.usp_BaoCaoDoanhThu_Result>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutAdmin/_MasterpageAdmin.cshtml";
+}
+
+<h2>BÁO CÁO DOANH THU</h2>
+
+@Html.ValidationSummary(true)
+@using (Html.BeginForm("index", "baocaodoanhthu", FormMethod.Post, new { @onsubmit = "return kiemTraTrong();" }))
+{
+    <select id="idThang" name="nameThang">
+        <option value="0">-- Chọn tháng --</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+    </select>
+    <select id="nm" name="nam">
+        <option value="0">-- Chọn năm --</option>
+        <option>2008</option>
+        <option>2009</option>
+        <option>2010</option>
+        <option>2011</option>
+        <option>2012</option>
+        <option>2013</option>
+        <option>2014</option>
+        <option>2015</option>
+        <option>2016</option>
+        <option>2017</option>
+        <option>2018</option>
+        <option>2019</option>
+        <option>2020</option>
+        <option>2021</option>
+        <option>2022</option>
+        <option>2023</option>
+        <option>2024</option>
+        <option>2025</option>
+    </select>
+    <input type="submit" value="Report" />
+}
+
+<table>
+    <tr>
+        <th>Mã Khách Sạn
+        </th>
+        <th>Doanh Thu
+        </th>
+        <th>Tổng Số Khách Đặt Phòng
+        </th>
+    </tr>
+
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @item.idKS
+            </td>
+            <td>
+                $@item.DoanhThu
+            </td>
+            <td>
+                @item.SoLuongKH
+            </td>
+        </tr>
+        }
+    }
+
+</table>
+<script>
+    function kiemTraThang() {
+        var vung = document.getElementById("nameThang");
+        alert(vung);
+        if (vung.value == "0") {
+            alert("Chưa chọn thành phố");
+            vung.focus();
+            return false;
+        }
+
+        var nm = document.getElementById("nam");
+        alert(nm);
+        if (nm.value == "0") {
+            alert("Chưa chọn thành phố");
+            nm.focus();
+            return false;
+        }
+    }
+</script>
+<script src="@Url.Content("~/Content/admin/js/Kiem.js")"></script>

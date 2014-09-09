@@ -1,0 +1,87 @@
+﻿@model EC08_SHBS.Models.NguoiDungModel
+@{
+    ViewBag.Title = "Đăng Nhập";
+    Layout = "~/Views/Shared/LayoutTrangChu/_MasterpageGuest.cshtml";
+}
+
+<div class="main_content">
+    <div class="clear"></div>
+    <div class="right_master">
+        <div class="main_search">
+            <div class="main_content">
+                <div class="loginIntroAdmin" style="height: 411px">
+                    <p>
+                        <img src="@Url.Content("~/Content/guest/images/SignIn.jpg")" alt="" width="600" height="362">
+                    </p>
+                </div>
+                <div class="formLoginRegister">
+                    <div class="formRegister">
+                        <div class="logIn" style="float: none; width: 100%">
+                            <label>Quản lý tài khoản</label>
+                            <div id="ctl00_ctl03_dvLogin" class="logIn_info">
+                                Để quản lý tài khoản cá nhân hoặc để hoàn tất thông tin đăng ký, Quý vị hãy nhập địa chỉ email và mật khẩu vào ô dưới đây rồi nhấp vào nút Đăng nhập.
+                                @using (Html.BeginForm("login", "home", FormMethod.Post, new { @class = "form_dangKy" }))
+                                {
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span>Tên đăng nhập:</span>
+                                                </td>
+                                                <td>
+                                                    <span class="dv_username" style="width: 170px;">
+                                                        @Html.TextBoxFor(x => x.UserName, new {@class="TI_username" })
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span>Mật khẩu:</span>
+                                                </td>
+                                                <td>
+                                                    <span class="dv_pass" style="width: 170px;">
+                                                        @Html.PasswordFor(x => x.Password, new {@class="TI_pass" })
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" class="validate" >
+                                                    @Html.ValidationSummary(true) 
+                                                    @Html.ValidationMessageFor(x=>x.UserName)
+                                                    @Html.ValidationMessageFor(x=>x.Password)
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="clear"></div>
+                                    
+                                    <div class="form_but_login">
+                                        <input type="submit" class="but_dangNhap" value="">
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div style="height: 10px">
+                    </div>
+                    <div class="formLog">
+                        <div class="signIn" style="float: none; width: 100%">
+                            <label>Đăng ký lần đầu</label>
+                            <div class="signIn_info">
+                                Quý vị chỉ cần nhấp vào nút “Đăng ký ngay hôm nay!” và thực hiện theo hướng dẫn.<br>
+                                <br>
+                                Sau khi Quý vị đã hoàn thành bước thứ nhất, chúng tôi sẽ gửi chi tiết đăng nhập
+                                Kết nối siêu tốc bằng email cho Quý vị.
+                            </div>
+                            <div class="signInBut">
+                                <a href="@Url.Content("~/Home/Register")"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

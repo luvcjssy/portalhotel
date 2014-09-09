@@ -1,0 +1,51 @@
+﻿<script>
+    function kiemTraVung(){
+        var vung = document.getElementById("idVung");
+        if (vung.value=="0") {
+            alert("Chưa chọn thành phố");
+            vung.focus();
+            return false;
+        }
+    }
+    
+</script>
+@using (Html.BeginForm("search", "home", FormMethod.Post, new {@onsubmit="return kiemTraVung();" }))
+{
+    var vung = new EC08_SHBS.Models.PortalEntities().Vungs.ToList();
+    <!--City-->
+    <select id="idVung" name="tenVung" style="width: 400px" >
+        <option value="0">- - - Chọn thành phố - - - - - - - - - -</option>
+        @foreach (var item in vung)
+        {
+            <option value="@item.idVung" style="font-size: 13px; font-weight: bold; font-style: italic;">@item.tenVung</option>
+        }
+    </select>
+    <!--Loai tien-->
+    <select name="se_money" id="se_money" style="width: 70px;" onchange="checkMoney()">
+        <option value="11" selected="">USD</option>
+    </select>
+    <!--Gia-->
+    <select style="display: block" id="idGia" name="idGia">
+        <option value="0" selected="" style="width: 190px;">- - - Chọn giá tối đa mỗi đêm - - -</option>
+        <option value="0">Không giới hạn</option>
+        <option value="15" style="width: 190px;">15 </option>
+        <option value="30" style="width: 190px;">30 </option>
+        <option value="50" style="width: 190px;">50 </option>
+        <option value="80" style="width: 190px;">80 </option>
+        <option value="100" style="width: 190px;">100 </option>
+        <option value="120" style="width: 190px;">120 </option>
+        <option value="150" style="width: 190px;">150 </option>
+        <option value="170" style="width: 190px;">170 </option>
+        <option value="200" style="width: 190px;">200 </option>
+        <option value="220" style="width: 190px;">220 </option>
+        <option value="250" style="width: 190px;">250 </option>
+        <option value="270" style="width: 190px;">270 </option>
+        <option value="300" style="width: 190px;">300 </option>
+        <option value="350" style="width: 190px;">350 </option>
+        <option value="400" style="width: 190px;">400 </option>
+        <option value="500" style="width: 190px;">500 </option>
+        <option value="600" style="width: 190px;">600 </option>
+        <option value="700" style="width: 190px;">700 </option>
+    </select>
+    <input class="sBut_timPhong" value="" type="submit">
+}
