@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PortalModelStoreContainer" CdmEntityContainer="PortalEntities">
+    <EntitySetMapping Name="BinhLuans">
+      <EntityTypeMapping TypeName="PortalModel.BinhLuan">
+        <MappingFragment StoreEntitySet="BinhLuan">
+          <ScalarProperty Name="idBL" ColumnName="idBL" />
+          <ScalarProperty Name="idKS" ColumnName="idKS" />
+          <ScalarProperty Name="binhLuan1" ColumnName="binhLuan" />
+          <ScalarProperty Name="tieuDe" ColumnName="tieuDe" />
+          <ScalarProperty Name="thoiGianBL" ColumnName="thoiGianBL" />
+          <ScalarProperty Name="diemDanhGia" ColumnName="diemDanhGia" />
+          <ScalarProperty Name="hoTen" ColumnName="hoTen" />
+          <ScalarProperty Name="eMail" ColumnName="eMail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhachSans">
+      <EntityTypeMapping TypeName="PortalModel.KhachSan">
+        <MappingFragment StoreEntitySet="KhachSan">
+          <ScalarProperty Name="idKS" ColumnName="idKS" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="idVung" ColumnName="idVung" />
+          <ScalarProperty Name="tinhTrang" ColumnName="tinhTrang" />
+          <ScalarProperty Name="loaiKS" ColumnName="loaiKS" />
+          <ScalarProperty Name="diemDanhGia" ColumnName="diemDanhGia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiNguoiDungs">
+      <EntityTypeMapping TypeName="PortalModel.LoaiNguoiDung">
+        <MappingFragment StoreEntitySet="LoaiNguoiDung">
+          <ScalarProperty Name="idLoai" ColumnName="idLoai" />
+          <ScalarProperty Name="tenLoai" ColumnName="tenLoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NguoiDungs">
+      <EntityTypeMapping TypeName="PortalModel.NguoiDung">
+        <MappingFragment StoreEntitySet="NguoiDung">
+          <ScalarProperty Name="IdNguoiDung" ColumnName="IdNguoiDung" />
+          <ScalarProperty Name="eMail" ColumnName="eMail" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="passWord" ColumnName="passWord" />
+          <ScalarProperty Name="hoTen" ColumnName="hoTen" />
+          <ScalarProperty Name="diaChi" ColumnName="diaChi" />
+          <ScalarProperty Name="dienThoai" ColumnName="dienThoai" />
+          <ScalarProperty Name="loaiND" ColumnName="loaiND" />
+          <ScalarProperty Name="tinhTrang" ColumnName="tinhTrang" />
+          <ScalarProperty Name="diemTong" ColumnName="diemTong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhieuGiaoDiches">
+      <EntityTypeMapping TypeName="PortalModel.PhieuGiaoDich">
+        <MappingFragment StoreEntitySet="PhieuGiaoDich">
+          <ScalarProperty Name="idPhieuGiaoDich" ColumnName="idPhieuGiaoDich" />
+          <ScalarProperty Name="tongTien" ColumnName="tongTien" />
+          <ScalarProperty Name="ngayLapPhieu" ColumnName="ngayLapPhieu" />
+          <ScalarProperty Name="tinhTrang" ColumnName="tinhTrang" />
+          <ScalarProperty Name="ngayNhanPhong" ColumnName="ngayNhanPhong" />
+          <ScalarProperty Name="ngayTraPhong" ColumnName="ngayTraPhong" />
+          <ScalarProperty Name="soLuongPhong" ColumnName="soLuongPhong" />
+          <ScalarProperty Name="ghiChu" ColumnName="ghiChu" />
+          <ScalarProperty Name="loaiPhong" ColumnName="loaiPhong" />
+          <ScalarProperty Name="idNguoiDP" ColumnName="idNguoiDP" />
+          <ScalarProperty Name="idKS" ColumnName="idKS" />
+          <ScalarProperty Name="hinhThucThanhToan" ColumnName="hinhThucThanhToan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ThanhToans">
+      <EntityTypeMapping TypeName="PortalModel.ThanhToan">
+        <MappingFragment StoreEntitySet="ThanhToan">
+          <ScalarProperty Name="idThanhToan" ColumnName="idThanhToan" />
+          <ScalarProperty Name="tenThanhToan" ColumnName="tenThanhToan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UuDais">
+      <EntityTypeMapping TypeName="PortalModel.UuDai">
+        <MappingFragment StoreEntitySet="UuDai">
+          <ScalarProperty Name="idUuDai" ColumnName="idUuDai" />
+          <ScalarProperty Name="tenUuDai" ColumnName="tenUuDai" />
+          <ScalarProperty Name="tinhTrang" ColumnName="tinhTrang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vungs">
+      <EntityTypeMapping TypeName="PortalModel.Vung">
+        <MappingFragment StoreEntitySet="Vung">
+          <ScalarProperty Name="idVung" ColumnName="idVung" />
+          <ScalarProperty Name="tenVung" ColumnName="tenVung" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_DanhSachGiaoDich" FunctionName="PortalModel.Store.sp_DanhSachGiaoDich">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PortalModel.sp_DanhSachGiaoDich_Result">
+          <ScalarProperty Name="idPhieuGiaoDich" ColumnName="idPhieuGiaoDich" />
+          <ScalarProperty Name="tongTien" ColumnName="tongTien" />
+          <ScalarProperty Name="ngayLapPhieu" ColumnName="ngayLapPhieu" />
+          <ScalarProperty Name="tinhTrang" ColumnName="tinhTrang" />
+          <ScalarProperty Name="ngayNhanPhong" ColumnName="ngayNhanPhong" />
+          <ScalarProperty Name="ngayTraPhong" ColumnName="ngayTraPhong" />
+          <ScalarProperty Name="soLuongPhong" ColumnName="soLuongPhong" />
+          <ScalarProperty Name="ghiChu" ColumnName="ghiChu" />
+          <ScalarProperty Name="loaiPhong" ColumnName="loaiPhong" />
+          <ScalarProperty Name="idNguoiDP" ColumnName="idNguoiDP" />
+          <ScalarProperty Name="idKS" ColumnName="idKS" />
+          <ScalarProperty Name="hinhThucThanhToan" ColumnName="hinhThucThanhToan" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_BaoCaoDoanhThu" FunctionName="PortalModel.Store.usp_BaoCaoDoanhThu">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PortalModel.usp_BaoCaoDoanhThu_Result">
+          <ScalarProperty Name="idKS" ColumnName="idKS" />
+          <ScalarProperty Name="DoanhThu" ColumnName="DoanhThu" />
+          <ScalarProperty Name="SoLuongKH" ColumnName="SoLuongKH" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_BinhLuanKS" FunctionName="PortalModel.Store.usp_BinhLuanKS" />
+    <FunctionImportMapping FunctionImportName="usp_capNhatThongTinNguoiDung" FunctionName="PortalModel.Store.usp_capNhatThongTinNguoiDung" />
+    <FunctionImportMapping FunctionImportName="usp_CapNhatUuDai" FunctionName="PortalModel.Store.usp_CapNhatUuDai" />
+    <FunctionImportMapping FunctionImportName="USP_DANGKY" FunctionName="PortalModel.Store.USP_DANGKY" />
+    <FunctionImportMapping FunctionImportName="usp_DanhGiaKhachSan" FunctionName="PortalModel.Store.usp_DanhGiaKhachSan" />
+    <FunctionImportMapping FunctionImportName="usp_LayDSKhachSan" FunctionName="PortalModel.Store.usp_LayDSKhachSan">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PortalModel.usp_LayDSKhachSan_Result">
+          <ScalarProperty Name="idKS" ColumnName="idKS" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="tenVung" ColumnName="tenVung" />
+          <ScalarProperty Name="loaiKS" ColumnName="loaiKS" />
+          <ScalarProperty Name="diemDanhGia" ColumnName="diemDanhGia" />
+          <ScalarProperty Name="tinhTrang" ColumnName="tinhTrang" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_ThemKhachSan" FunctionName="PortalModel.Store.usp_ThemKhachSan" />
+    <FunctionImportMapping FunctionImportName="usp_ThemPhieuGiaoDich" FunctionName="PortalModel.Store.usp_ThemPhieuGiaoDich" />
+    <FunctionImportMapping FunctionImportName="usp_ThemPhieuGiaoDichKhachViengTham" FunctionName="PortalModel.Store.usp_ThemPhieuGiaoDichKhachViengTham" />
+    <FunctionImportMapping FunctionImportName="usp_ThemUuDai" FunctionName="PortalModel.Store.usp_ThemUuDai" />
+    <FunctionImportMapping FunctionImportName="usp_XemUuDai" FunctionName="PortalModel.Store.usp_XemUuDai">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PortalModel.usp_XemUuDai_Result">
+          <ScalarProperty Name="idUuDai" ColumnName="idUuDai" />
+          <ScalarProperty Name="tenUuDai" ColumnName="tenUuDai" />
+          <ScalarProperty Name="tinhTrang" ColumnName="tinhTrang" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_XoaKhachSan" FunctionName="PortalModel.Store.usp_XoaKhachSan" />
+    <FunctionImportMapping FunctionImportName="usp_XoaUuDai" FunctionName="PortalModel.Store.usp_XoaUuDai" />
+  </EntityContainerMapping>
+</Mapping>

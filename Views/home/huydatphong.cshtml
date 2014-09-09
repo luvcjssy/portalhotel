@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "infocomplete";
+    Layout = "~/Views/Shared/LayoutTrangChu/_MasterpageGuest.cshtml";
+}
+<form id="frmHuy" action="/home/index">
+    <div class="main_content">
+        <div class="clear"></div>
+        <div class="right_master">
+            <div class="alert" style="text-align: center; color: red">
+                Đã gửi mail thông báo tới khách sạn. Xin vui lòng chờ khách sạn kiểm tra và hoàn tiền lại<br />
+                <span style="font-size: 14px; color: black">Nhấn @Html.ActionLink("vào đây", "index", "home") để quay lại trang chủ.</span>
+            </div>
+
+        </div>
+    </div>
+</form>
+
+<script type="text/javascript" language="javascript">
+    $(this.document).ready(function () {
+        var form = $("#frmHuy");
+        form.submit();
+    });
+</script>

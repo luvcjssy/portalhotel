@@ -1,0 +1,531 @@
+﻿@model IEnumerable<EC08_SHBS.Models.KhachSan>
+@{
+    ViewBag.Title = "Chi tiết phòng khách sạn";
+    Layout = "~/Views/Shared/LayoutTrangChu/_MasterpageGuest.cshtml";
+}
+
+@using EC08_SHBS;
+@using System.Xml.Linq;
+
+@foreach (var item in Model)
+{
+    WebService wsKS = new WebService(@item.URL, "getThongTinKhachSan");
+    WebService wsP = new WebService(@item.URL, "getDSLoaiPhong");
+    wsKS.Invoke();
+    string duLieuKS = wsKS.ResultString;
+    if (duLieuKS != null)
+    {
+        string duLieuKSReplace = duLieuKS.Replace("xmlns=\"http://tempuri.org/\"", "");
+        XDocument xmlKS = XDocument.Parse(duLieuKSReplace);
+
+        wsP.Invoke();
+        string duLieuP = wsP.ResultString;
+        if (duLieuP != null)
+        {
+            string duLieuPReplace = duLieuP.Replace("xmlns=\"http://tempuri.org/\"", "");
+            XDocument xmlP = XDocument.Parse(duLieuPReplace);
+            
+            
+    <div class="main_content">
+        <div class="clear"></div>
+        <div class="right_master">
+            <div class="main_content">
+                <!--Detail-->
+                <div class="hotel_detail">
+                    <!--Slide show-->
+                    <div class="hotel_img" id="slideshow">
+                        <img src="@xmlKS.Descendants("AnhDaiDien").Select(x => x.Value).ToArray()[0]" class="" style="opacity: 1;">
+                        @{
+            var danhSachAnhKS = xmlKS.Descendants("DanhSachAnh").Elements("string").ToArray();
+
+            foreach (var anhKS in danhSachAnhKS)
+            {
+                            <img src="@anhKS.Value" class="" style="opacity: 1;">                       
+            }
+                        }
+                    </div>
+                    <!--Detail-->
+                    <div class="hotel_detail_right">
+                        <div class="hotel_detail_right_top">
+                            <!--Dia chi-->
+                            <div class="hotel_info">
+                                <p class="hotel_name">
+                                    @xmlKS.Descendants("TenKhachSan").Select(x => x.Value).ToArray()[0]
+                                </p>
+                                <p class="hotel_address">
+                                    @xmlKS.Descendants("DiaChi").Select(x => x.Value).ToArray()[0]
+                                </p>
+                                <p class="hotel_position">
+                                    Vị trí: <b>@xmlKS.Descendants("DiaChi").Select(x => x.Value).ToArray()[0]</b>
+                                </p>
+                            </div>
+
+                            <!--Điểm đánh giá-->
+                            <div class="hotel_mark">
+                                <span>
+                                    <p>
+                                        ĐIỂM
+                                    </p>
+                                    <p>
+                                        <label>@item.diemDanhGia/10</label>
+                                    </p>
+                                </span>
+                            </div>
+                        </div>
+                        <script>
+                            $("#idimg").click(function () {
+                                $(this).attr('width', '400');
+                                $(this).attr('height', '300');
+                            });
+                        </script>
+                        <!--Hình ảnh thêm-->
+                        <div class="hotel_images">
+                            <div class="hotel_images_content">
+                                @foreach (var anhKS in danhSachAnhKS)
+                                {
+                                    <a href="#">
+                                        <img src="@anhKS.Value">
+                                    </a>
+                                }
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <!--Tab detail-->
+                <div class="hotel_tabs">
+                    <ul class="tabs">
+                        <li><a class="current" id="li_tab1" style="width: 200px;">Mô tả khách sạn</a></li>
+                        <li><a class="" id="li_tab2" style="width: 216px;">Thông tin hữu ích</a></li>
+                        <li><a class="" id="li_tab3" style="width: 320px;">Các chính sách của khách sạn</a></li>
+                        <li><a class="" id="li_tab4" style="width: 250px;">Chương trình khuyến mãi</a></li>
+                    </ul>
+                    <div class="panes">
+                        <div id="tab1" style="display: block;">
+                            <p>
+                                @xmlKS.Descendants("MoTa").Select(x => x.Value).ToArray()[0]
+                            </p>
+                        </div>
+                        <div id="tab2" style="display: none;">
+
+                            <table class="admintable" style="width: 100%">
+                                <tbody>
+                                    <tr>
+                                        <td class="key" align="right">Có chỗ đậu xe :
+                                        </td>
+                                        <td>
+                                            <img src="@Url.Content("~/Content/guest/images/icon-16-checkin.png")" alt="img check">
+                                        </td>
+                                        <td class="key" align="right">Có chỗ đưa đón sân bay:
+                                        </td>
+                                        <td>
+                                            <img src="@Url.Content("~/Content/guest/images/icon-16-checkin.png")" alt="img check">
+                                        </td>
+                                        <td class="key" align="right">Có dịch vụ phòng:
+                                        </td>
+                                        <td style="color: #0033CC">
+                                            <img src="@Url.Content("~/Content/guest/images/icon-16-checkin.png")" alt="img check">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="key" align="right">Tiếp tân mở cửa đến :
+                                        </td>
+                                        <td style="color: #0033CC">24:00 h
+                                        </td>
+                                        <td class="key" align="right">Điện áp trong phòng :
+                                        </td>
+                                        <td style="color: #0033CC">220 (V)
+                                        </td>
+                                        <td class="key" align="right">Khách sạn xây vào :
+                                        </td>
+                                        <td style="color: #0033CC">2008
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="key" align="right">Cách trung tâm TP :
+                                        </td>
+                                        <td style="color: #0033CC">1&nbsp;Km
+                                        </td>
+                                        <td class="key" align="right">Tổng số thang máy :
+                                        </td>
+                                        <td style="color: #0033CC">0
+                                        </td>
+                                        <td class="key" align="right">Năm sửa chữa :
+                                        </td>
+                                        <td style="color: #0033CC">2010
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="key" align="right">Phí ăn sáng :
+                                        </td>
+                                        <td style="color: #0033CC">0 (VND)
+                                        </td>
+                                        <td class="key" align="right">Phí đưa đón sân bay :
+                                        </td>
+                                        <td style="color: #0033CC">525000 (VND)
+                                        </td>
+                                        <td class="key" align="right">internet(nếu có) :
+                                        </td>
+                                        <td style="color: #0033CC">0 (VND)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="key" align="right">Khoảng cách tới sân bay :
+                                        </td>
+                                        <td style="color: #0033CC">7&nbsp;Km
+                                        </td>
+                                        <td class="key" align="right">Thời gian tới sân bay :
+                                        </td>
+                                        <td style="color: #0033CC">30 (phút)
+                                        </td>
+                                        <td class="key" align="right">Số lượng nhà hàng:
+                                        </td>
+                                        <td style="color: #0033CC">1
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="key" align="right">Số lượng quầy bar :
+                                        </td>
+                                        <td style="color: #0033CC">1
+                                        </td>
+                                        <td class="key" align="right">Tổng số tầng - số phòng :
+                                        </td>
+                                        <td style="color: #0033CC">7 - 49
+                                        </td>
+                                        <td class="key" align="right">Tổng số phòng/ tầng không hút thuốc :
+                                        </td>
+                                        <td style="color: #0033CC">0
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="key" align="right">Thời gian nhận phòng:
+                                        </td>
+                                        <td style="color: #0033CC">11:00 AM (sớm nhất)
+                                        </td>
+                                        <td class="key" align="right">Thời gian trả phòng :
+                                        </td>
+                                        <td style="color: #0033CC">12:00 AM (trễ nhất)
+                                        </td>
+                                        <td class="key" align="right">Trẻ em dưới :
+                                        </td>
+                                        <td style="color: #0033CC">6 (tuổi)
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="tab3" style="display: none;">
+                            <p>Giờ nhận phòng là 14:00. Giờ trả phòng trước 12:00.</p>
+                            <p>Trong trường hợp nhận phòng sớm từ 06:00 đến 10:00 hay trả phòng trễ từ 14:00 đến 18:00 sẽ phụ thu thêm 50% tiền phòng.</p>
+                            <p>Nhận phòng trước 06:00 hay trả phòng sau 18:00 sẽ tính 100% tiền phòng.</p>
+                            <p>Trẻ em dưới 06 tuổi ở chung giường với cha mẹ sẽ ko tính phí tiền phòng, từ 06 đến 12 tuổi chỉ phụ thu tiền ăn sáng là 100.000VNĐ/ trẻ / phần.</p>
+                            <p>Trẻ em trên 12 tuổi được xem như người lớn và sẽ phụ thu thêm 200.000VNĐ</p>
+                            <p>&nbsp;</p>
+                        </div>
+                        <div id="tab4" style="display: none;">
+                            <p>Chúng tôi có chính sách giá đặc biệt khi Quý khách đặt phòng theo nhóm  từ 6 phòng. Để có giá đặc biệt này, Quý khách vui lòng liên hệ với chúng  tôi theo tổng đài 08.5445 3555.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--List room-->
+                @{var danhSachLoaiPhong = xmlP.Descendants("LoaiPhong").ToArray();}
+                <div class="list_room">
+                    @using (Html.BeginForm("booking", "home", FormMethod.Post))
+                    {
+                        <label>
+                            Danh sách loại phòng:
+                        </label>
+                        <div class="label">
+                            <span style="width: 558px;">Loại phòng</span>
+                            <span style="width: 250px;">Giá</span>
+                            <span style="width: 190px;">Đặt phòng</span>
+                        </div>
+                        @Html.Hidden("idKhachSan", @item.idKS)
+                        @Html.Hidden("idLoaiPhong")
+                        <ul id="idPhong">
+                            @foreach (var phong in danhSachLoaiPhong)
+                            {
+                                if (int.Parse(@phong.Descendants("PhongTrong").Select(x => x.Value).ToArray()[0]) > 0)
+                                {
+                                <li id="@phong.Descendants("idLoai").Select(x => x.Value).ToArray()[0]" style="display: block">
+                                    <div class="room_info">
+                                        <div class="room_img">
+                                            <a>
+                                                <span>
+                                                    <img src="@phong.Descendants("hinhAnh").Elements("string").Select(x => x.Value).ToArray()[0]">
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <div class="room_info_content">
+                                            <p class="room_name">
+                                                <a>Phòng @phong.Descendants("tenLoai").Select(x => x.Value).ToArray()[0]<br>
+                                                    <span>(@phong.Descendants("tenLoai").Select(x => x.Value).ToArray()[0])</span>
+                                                </a>
+                                            </p>
+                                            <p>
+                                                Số người ở tối đa: <span class="max_people" style="width: 20px"></span>
+                                            </p>
+                                            <p class="include_breakfast">
+                                                Bao gồm ăn sáng
+                                            </p>
+                                            <p id="text1">
+                                                <a class="cancelCondition">Điều kiện hủy Phòng</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="room_price">
+                                        <p class="special_price" id="special_price_usd_1" style="display: block">
+                                            <span>@phong.Descendants("giaPhong").Select(x => x.Value).ToArray()[0]</span>
+                                        </p>
+                                        <p style="display: block">
+                                            USD/Đêm
+                                        </p>
+
+                                    </div>
+                                    <div class="room_booking">
+                                        <p>Còn lại @phong.Descendants("PhongTrong").Select(x => x.Value).ToArray()[0] phòng</p>
+                                        <input type="submit" class="but_datPhong" value="">
+
+                                        <input type="hidden" id="idLP" id="idLP" value="@phong.Descendants("idLoai").Select(x => x.Value).ToArray()[0]" />
+                                    </div>
+                                    <div class="clear"></div>
+                                </li>
+                            
+                                }
+                            }
+                        </ul>
+                        <div class="barViewMore">
+
+                            <div class="barViewMore_right">
+                                <span class="ensure">Đảm bảo giá thấp nhất!</span>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <!--Danh sách hình ảnh-->
+                <div class="container">
+                    <div class="container_title">
+                        <label>Thêm ảnh và thông tin phòng:</label>
+                    </div>
+                    <div class="container_content">
+                        <div class="moreImage_content">
+
+                            @{
+                    var loaiPhong = xmlP.Descendants("LoaiPhong").ToArray()[0];
+                    var hinhAnh = loaiPhong.Descendants("hinhAnh").Elements("string").ToArray();
+
+                    foreach (var hinh in hinhAnh)
+                    {
+                                <div class="moreImage_item">
+                                    <a href="#" onclick="return hs.expand(this)">
+                                        <img src="@hinh.Value" width="241" height="160">
+                                    </a>
+                                </div>
+                    }
+                            }
+
+                        </div>
+                        <div class="clear">
+                        </div>
+                    </div>
+                </div>
+
+                <!--Danh sách tiện nghi-->
+                <div class="container">
+                    <div class="container_title">
+                        <label>Các đặc điểm của khách sạn</label>
+                    </div>
+                    <div class="container_content">
+                        <div class="hotel_feature_group">
+                            <div class="hotel_feature_group_title">
+                                Tiện nghi
+                            </div>
+                            <div class="hotel_feature_group_content">
+                                @{
+                    var danhSachTienNghi = xmlKS.Descendants("DanhSachTienNghi").Elements("string").ToArray();
+                    foreach (var tienNghi in danhSachTienNghi)
+                    {
+                                    <div class="hotel_feature_item yes">
+                                        @tienNghi.Value
+                                    </div>
+                    }   
+                                }
+                                <div class="clear"></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--Comment-->
+
+                <div class="container" id="div_view_comment">
+                    <div class="container_title" id="Comment">
+                        <label>Nhận xét của khách hàng</label>
+                    </div>
+                    <div class="container_content">
+
+                        @{
+                    var danhSachBinhLuan = new EC08_SHBS.Models.PortalEntities().BinhLuans.Where(x => x.idKS.Equals(@item.idKS)).ToList();
+                    foreach (var binhLuan in danhSachBinhLuan)
+                    {
+                            <div class="comment_item" id="div_comment_1" style="display: block">
+                                <div class="comment_header">
+                                    <div class="comment_info">
+                                        <div class="comment_mark">
+                                            <span>
+                                                @binhLuan.diemDanhGia/10</span>
+                                        </div>
+                                        <p class="comment_title">
+                                            @binhLuan.tieuDe
+                                        </p>
+                                        <p>
+                                            Nhận xét bởi @binhLuan.hoTen
+                                        </p>
+                                        <p>
+                                            Email @binhLuan.eMail
+                                        </p>
+                                        <p>
+                                            Thời gian bình luận: @binhLuan.thoiGianBL
+                                        </p>
+                                    </div>
+
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="comment_content">
+                                    @binhLuan.binhLuan1
+                                </div>
+                            </div>
+                            
+                    }
+                        }
+
+
+                    </div>
+                    <div class="container_title" id="MyComment">
+                        <label>Nhận xét của bạn</label>
+                    </div>
+                    <table id="tableNX" cellspacing="10">
+                        @using (Html.BeginForm("binhluan", "home", FormMethod.Post, new { @onsubmit = "return kiemTraBinhLuan();" }))
+                        {
+                            @Html.Hidden("idKhachSan", @item.idKS)
+
+                            if (HttpContext.Current.User.Identity.IsAuthenticated == true && @User.IsInRole("User"))
+                            {
+
+                            }
+                            else
+                            {
+                                     <tr>
+                                <td>Họ tên quý vị</td>
+                                <td>
+                                    <input id="txt_hoten" type="text" style="margin: 2px; width: 248px;" name="hoten" />
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>
+                                    <input id="txt_email" type="text" style="margin: 2px; width: 248px;" name="email" />
+                                </td>
+                            </tr>
+                           }
+                                
+                                   
+                            <tr>
+                                <td>Tiêu đề</td>
+                                <td>
+                                    <input id="txt_tieude" type="text" style="margin: 2px; width: 248px;" name="tieude" /></td>
+                            </tr>
+                            <tr>
+                                <td>Nội dung</td>
+                                <td>
+                                    <textarea name="noidung" id="TextArea1" cols="20" rows="2" style="margin: 2px; width: 248px; height:180px"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Điểm đánh giá</td>
+                                <td>
+                                    <select name="danhgia" id="sl_danhgia">
+                                        @for (int i = 1; i <= 10; i++)
+                                        {
+                                            <option value="@i">@i</option>
+                                        }
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input id="Submit1" type="submit" value="Gửi nhận xét" /></td>
+                            </tr>
+                            <tr>
+
+                            </tr>
+                            
+                    
+                        }
+                        </table>
+                    </div>
+                        
+                <!--Sroll top-->
+                <div class="scrollToTop">
+                    <a id="scrlTop" href="#"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        }
+
+    }
+}
+
+
+<!--Script-->
+<!--Scroll top-->
+<script src="@Url.Content("~/Content/guest/js/scrolltop.js")"></script>
+
+<!--Tab 1-2-3-4-->
+<script src="@Url.Content("~/Content/guest/js/tab.js")"></script>
+
+<!--Slide show-->
+<script src="@Url.Content("~/Content/guest/js/slideshow.js")"></script>
+<!--End slide show-->
+
+<!--Click lấy id phòng-->
+<script>
+    $("#idPhong li input").click(function () {
+        $("#idLoaiPhong").val($(this).parent().parent().attr('id'));
+    });
+</script>
+<script type="text/javascript">
+    function myCallback(data) {
+        if (!data.Success) {
+            alert(data.ErrorMessage);
+        }
+        else {
+            alert("id: " + data.Id);
+        }
+    }
+</script>
+@*@Ajax.ActionLink("home", // <-- Text to display
+                 "binhluan", // <-- Action Method Name
+                 new {  hoten = Request["hoten"],
+                        email = Request["email"],
+                        tieude = Request["tieude"],
+                        noidung = Request["noidung"],
+                        danhgia = Request["danhgia"]
+                        },
+                 new AjaxOptions
+                 {                         
+                     HttpMethod = "POST", // <-- HTTP method
+                     OnSuccess = "myCallback"
+                 })*@
+
+<script src="@Url.Content("~/Content/guest/js/kiemTraBinhLuan.js")"></script>

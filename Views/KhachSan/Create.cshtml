@@ -1,0 +1,146 @@
+﻿@model EC08_SHBS.Models.KhachSan
+@{
+    ViewBag.Title = "Thêm Khách Sạn";
+    Layout = "~/Views/Shared/LayoutAdmin/_MasterpageAdmin.cshtml";
+}
+
+<h2>Thêm Khách Sạn</h2>
+<div class="clear">
+</div>
+<!-- End .clear -->
+<div class="content-box">
+    <!-- Start Content Box -->
+    <div class="content-box-header">
+        <h3 style="cursor: s-resize;">Thông Tin Khách Sạn</h3>
+        <div class="clear">
+        </div>
+    </div>
+    <!-- End .content-box-header -->
+    <div class="content-box-content">
+        <div class="tab-content default-tab" id="tab1" style="display: block;">
+            @using (Html.BeginForm("create", "khachsan", FormMethod.Post, new { @onsubmit="return kiemTraKhachSan();" }))
+            {
+                <table border="0" cellpadding="0" cellspacing="0" id="id-form">
+                    <tbody>
+                        <tr>
+                            <th valign="top">URL:
+                            </th>
+                            <span style="color: red; width: 100%; margin: 5px; text-align: left; font-weight: normal;">Xin hãy điền tất cả thông tin khách sạn bên dưới</span>  
+                            <td>
+
+                                @Html.TextBoxFor(c => c.URL, new { @class = "inp-form" })
+                                
+                                @Html.ValidationMessageFor(c => c.URL)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th valign="top">Tên Vùng:
+                            </th>
+                            <td>
+                                @*@Html.TextBoxFor(c => c.idVung, new { @class = "inp-form" })
+                                @Html.ValidationMessageFor(c => c.idVung)*@
+                                @Html.DropDownList("idVung", new SelectList(ViewBag.Vung as System.Collections.IEnumerable, "idVung", "tenVung", Model.Vung), "--Chọn vùng--", new { @class = "styledselect_form_1" })
+                                @Html.ValidationMessageFor(c => c.idVung)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th valign="top">Loại khách sạn:
+                            </th>
+                            <td>
+                                @Html.TextBoxFor(c => c.loaiKS, new { @class = "inp-form" })
+                                @Html.ValidationMessageFor(c => c.loaiKS)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th valign="top">Điểm Đánh Giá:
+                            </th>
+                            <td>
+                                @Html.TextBoxFor(c => c.diemDanhGia, new { @class = "inp-form" })
+                                @Html.ValidationMessageFor(c => c.diemDanhGia)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th valign="top">Tình Trạng:
+                            </th>
+                            <td>
+                                @* @Html.TextBoxFor(c => c.tinhTrang, new { @class = "inp-form" })
+                                @Html.ValidationMessageFor(c => c.tinhTrang)*@
+                                <select id="idTinhTrang" name="nameTinhTrang">
+                                    <option value="0">-- Chọn tình trạng --</option>
+                                    <option value="Hoạt động">Hoạt động</option>
+                                    <option value="Không hoạt động">Không hoạt động</option>
+                                </select>
+                                @Html.ValidationMessageFor(c => c.tinhTrang)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>&nbsp;
+                            </th>
+                            <td valign="top">
+                                <input type="submit" value="" class="form-submit">
+                                <a href="@Url.Content("~/khachsan/index")">
+                                    <input type="button" value="" class="form-reset" /></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            }
+        </div>
+    </div>
+    <!-- End .content-box-content -->
+</div>
+<div id="footer">
+    <small>
+        <!-- Remove this notice or replace it with whatever you want -->
+        © Copyright 2009 Your Company | Powered by <a href="http://themeforest.net/item/simpla-admin-flexible-user-friendly-admin-skin/46073">Simpla Admin</a> | <a href="#">Top</a> </small>
+</div>
+
+<script>
+    function kiemTraKhachSan() {
+        var url = document.getElementById("URL");
+        var vung = document.getElementById("idVung");
+        var loaiKS = document.getElementById("loaiKS");
+        var diem = document.getElementById("diemDanhGia");
+        var tinhTrang = document.getElementById("idTinhTrang");
+
+        if (url.value == "") {
+            alert("URL không được bỏ trống.");
+            url.focus();
+            return false;
+        }
+
+        if (vung.value == "") {
+            alert("Chưa chọn vùng.");
+            vung.focus();
+            return false;
+        }
+
+        if (loaiKS.value == "") {
+            alert("Loại khách sạn không được bỏ trống.");
+            loaiKS.focus();
+            return false;
+        }
+        if (isNaN(loaiKS.value)) {
+            alert("Loại khách sạn chỉ được nhập số (ví dụ: 1, 2, 3).");
+            loaiKS.focus();
+            return false;
+        }
+
+        if (diem.value == "") {
+            alert("Điểm đánh giá không được bỏ trống.");
+            diem.focus();
+            return false;
+        }
+        if (isNaN(diem.value)) {
+            alert("Điểm đánh giá chỉ được nhập số (ví dụ: 1, 2, 3, ..., 10).");
+            diem.focus();
+            return false;
+        }
+
+        if (tinhTrang.value == "0") {
+            alert("Chưa chọn tình trạng.");
+            tinhTrang.focus();
+            return false;
+        }
+    }
+</script>
